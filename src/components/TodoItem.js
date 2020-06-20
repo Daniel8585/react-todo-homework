@@ -3,11 +3,13 @@ import Button from './Button';
 
 const TodoItem = (props) => {
   return (
-    <li>
-      <span>{props.value}</span>
-      <Button value="Delete" />
-      <Button value="Done" />
-    </li>
+   <div className='text2'> 
+      <ul className='liTeg'>
+        <span>{props.value}</span>
+     </ul>
+      <Button value="Done"/>
+      <Button  value="Delete"/> 
+  </div>       
   )
 }
 

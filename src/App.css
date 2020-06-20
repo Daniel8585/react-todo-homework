@@ -1,5 +1,76 @@
+body{
+  background-color: slateblue;
+}
+
+.title{
+  color: rgb(0, 255, 255);
+}
+.list{
+  background-color: darkslateblue;
+  min-height: 500px;
+  width: 400px;
+  margin: 40px auto;
+  border-radius: 20px;
+}
+#inputId{
+  background-color: steelblue;
+  border: 0;
+  width: 200px;
+  height: 40px;
+  padding: 0 20px;
+  margin: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  color: beige;
+  cursor: auto;
+}
+
+
+
+.liTeg{
+  background-color: rgba(0, 136, 113, 0.521);
+  border: 0;
+  width: 200px;
+  height: 35px;
+  padding: 0 20px;
+  margin: 15px auto;
+  font-size: 18px;
+  border-radius: 10px;
+  color: beige;
+  
+ }
+
+.delete{
+  background-color: brown;
+}
+
+button:hover{
+  background-color: rgb(255, 193, 24);
+  cursor: pointer;
+      
+}
+
+button{
+  background-color: aqua; 
+  border: 0;
+  border-radius: 10px;
+  width: 50px;
+  height: 40px;
+  margin: 5px;
+}
+
+.text2{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+
+
+}
+
+
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -36,3 +107,4 @@
     transform: rotate(360deg);
   }
 }
+

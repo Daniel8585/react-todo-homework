@@ -11,16 +11,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: [
-        {
-          id: 0,
-          value: 'hiiii',
-        },
-        {
-          id: 1,
-          value: 'hehhehe',
-        }
-      ],
+      todos: [],
       inputValue: '',
     }
   }
@@ -42,12 +33,18 @@ class App extends React.Component {
       ]
     })    
   }
-
+  
+  
 
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header />      
+        <div className='list'>
+          <div>
+          <Input handleChange={this.handleChange}  />
+          <Button className='sub' value="Add" onClick={this.onSubmit} />
+        </div>
         <div>
           {
             this.state.todos.map((item) => (
@@ -55,10 +52,8 @@ class App extends React.Component {
             ))
           }
         </div>
-        <div>
-          <Input handleChange={this.handleChange}  />
-          <Button value="Submit" onClick={this.onSubmit} />
         </div>
+       
         <Footer />
       </div>
     );
