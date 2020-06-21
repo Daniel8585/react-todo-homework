@@ -13,6 +13,7 @@ class App extends React.Component {
     this.state = {
       todos: [],
       inputValue: '',
+      key: ''
     }
   }
 
@@ -21,7 +22,9 @@ class App extends React.Component {
       inputValue: event.target.value,
     })
   }
-
+  
+  
+  
   onSubmit = () => {
     this.setState({
       todos: [
@@ -31,24 +34,32 @@ class App extends React.Component {
           value: this.state.inputValue,
         }
       ]
-    })    
-  }
-  
-  
+    }) 
+       
+  } 
 
+  deleteTodos = (index,e) => {
+    const todos = Object.assign([],this.state.todos);
+    todos.splice(index,1);
+    this.setState({todos:todos});
+  }
+ 
   render() {
+    const todos = this.state
     return (
       <div className="App">
         <Header />      
         <div className='list'>
           <div>
           <Input handleChange={this.handleChange}  />
-          <Button className='sub' value="Add" onClick={this.onSubmit} />
+          <Button value="Add" onClick={this.onSubmit} />
+          <Button value="delet" onClick={this.deleteTodos} />
         </div>
         <div>
-          {
-            this.state.todos.map((item) => (
-              <TodoItem key={item.id} value={item.value} />
+
+        {
+            this.state.todos.map((todos,index) => (
+              <TodoItem key={todos.id} value={todos.value} />
             ))
           }
         </div>

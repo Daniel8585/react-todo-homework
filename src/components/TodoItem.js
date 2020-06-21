@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import { render } from '@testing-library/react';
 
 const TodoItem = (props) => {
   return (
@@ -7,10 +8,13 @@ const TodoItem = (props) => {
       <ul className='liTeg'>
         <span>{props.value}</span>
      </ul>
-      <Button value="Done"/>
-      <Button  value="Delete"/> 
+      <Button onClick={props.doneTodos}  value="Done"/>
+      <Button onClick={props.deletTodos} value="Delete"/> 
   </div>       
   )
 }
+
+  
+
 
 export default TodoItem;
