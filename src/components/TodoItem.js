@@ -10,7 +10,7 @@ const TodoItem = (props) => {
       <ul className='liTeg'>
         <span>{props.value}</span>
      </ul>
-      {/* <Button onClick={props.deletTodos}  value="Done"/> */}
+      <Button onClick={() => props.doneTodos(props.id)}  value="Done"/>
       <Button onClick={() => props.deleteTodos(props.id)} value="Delete"/> 
   </div>       
   )

@@ -26,6 +26,10 @@ class App extends React.Component {
   
   
   onSubmit = () => {
+    const inputValue = this.state.inputValue;
+    if(inputValue === ''){
+   return alert('please add text')
+    }
     this.setState({
       todos: [
         ...this.state.todos,
@@ -34,15 +38,24 @@ class App extends React.Component {
           value: this.state.inputValue,
         }
       ]
-    }) 
-       
+    })
   } 
 
-  deleteTodos = (index,e) => {
+
+
+
+
+  deleteTodos = (index) => {
     const todos = this.state.todos.filter(item => item.id !== index);
     this.setState({todos:todos});
   }
  
+
+ doneTodos = (index,e) => {
+  
+ }
+ 
+
   render() {
     const todos = this.state
     return (
@@ -50,15 +63,14 @@ class App extends React.Component {
         <Header />      
         <div className='list'>
           <div>
-          <Input handleChange={this.handleChange}  />
-          <Button value="Add" onClick={this.onSubmit} />
-          <Button value="delet" onClick={this.deleteTodos} />
+          <Input handleChange={this.handleChange}/>
+          <Button value="Add" onClick={this.onSubmit}  />
         </div>
         <div>
 
         {
             this.state.todos.map((todos,index) => (
-              <TodoItem key={todos.id} value={todos.value} id={todos.id} deleteTodos={this.deleteTodos}/>
+              <TodoItem key={todos.id} value={todos.value} id={todos.id} deleteTodos={this.deleteTodos} doneTodos={this.doneTodos}/>
             ))
           }
         </div>
