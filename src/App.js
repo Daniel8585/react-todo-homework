@@ -39,8 +39,7 @@ class App extends React.Component {
   } 
 
   deleteTodos = (index,e) => {
-    const todos = Object.assign([],this.state.todos);
-    todos.splice(index,1);
+    const todos = this.state.todos.filter(item => item.id !== index);
     this.setState({todos:todos});
   }
  
@@ -59,7 +58,7 @@ class App extends React.Component {
 
         {
             this.state.todos.map((todos,index) => (
-              <TodoItem key={todos.id} value={todos.value} />
+              <TodoItem key={todos.id} value={todos.value} id={todos.id} deleteTodos={this.deleteTodos}/>
             ))
           }
         </div>
